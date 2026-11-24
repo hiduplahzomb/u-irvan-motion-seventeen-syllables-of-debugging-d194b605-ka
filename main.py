@@ -1,12 +1,14 @@
 """Seventeen Syllables of Debugging — KA entry.
 
 A haiku about the 3 AM production bug that turns out to be one typo.
-The pager screams, production burns, and the fix is a single line number.
+The pager screams, production burns, and the punchline is the cost:
+one typo on line 419 ate three hours of the night.
 
 Gate: entry.txt must be exactly 3 lines with syllable counts 5-7-5
 (17 syllables total), counted by a simple vowel-group counter that
-skips punctuation-only tokens (the em dash) and counts hyphenated
-compounds part by part ("four-one-nine" is 3, not 4).
+skips punctuation-only tokens (the em dashes) and counts hyphenated
+compounds part by part ("four-one-nine" is 3, not 4). The last line
+carries the joke — the number is the punchline, not the fix.
 """
 
 import os
@@ -14,10 +16,11 @@ import re
 import sys
 
 # The haiku — 5 / 7 / 5 syllables, verified below by the counter.
+# Last line is the twist: line 419 cost three hours.
 TEXT = (
     "Pager screams at three\n"
     "production burns \u2014 one typo\n"
-    "fix line four-one-nine"
+    "four-one-nine \u2014 three hours"
 )
 
 VOWELS = "aeiouy"
